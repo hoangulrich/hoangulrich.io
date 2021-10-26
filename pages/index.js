@@ -1,17 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
-import {
-  Text,
-  Heading,
-  Flex,
-  useColorModeValue,
-  Stack,
-} from "@chakra-ui/react";
 import Layout from "../components/Layout";
+import Introduction from "../components/Introduction";
 
 export default function Home() {
-  const textColor = useColorModeValue("teal", "teal.200");
-
   return (
     <Layout>
       <Head>
@@ -20,14 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Stack mt="20">
-        <Heading color={textColor}>Hi, I'm</Heading>
-        <Heading fontSize="9xl">Hoang Le</Heading>
-      </Stack>
-
-      <Stack h="100vh">
-        <Heading>- a Software Engineer</Heading>
-      </Stack>
+      <Introduction />
     </Layout>
   );
 }
