@@ -5,8 +5,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Nav />
-      <Container maxW="container.xl">
-        <Stack>{children}</Stack>
+      <Container maxW="container.xl" mt={["20", "20", "36", "36"]}>
+        <Stack spacing="24">{children}</Stack>
       </Container>
     </>
   );

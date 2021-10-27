@@ -18,9 +18,9 @@ const customTheme = extendTheme({
 
   breakpoints: {
     sm: "40em",
-    sm: "52em",
-    sm: "64em",
-    sm: "76em",
+    md: "52em",
+    lg: "64em",
+    xl: "76em",
   },
 
   fontSizes: {
