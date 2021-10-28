@@ -41,6 +41,9 @@ const Nav = () => {
           <Button colorScheme="teal" variant="ghost">
             Works
           </Button>
+          <Button colorScheme="teal" variant="ghost">
+            Contact
+          </Button>
         </HStack>
 
         <Box>
