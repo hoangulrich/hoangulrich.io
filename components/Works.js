@@ -10,6 +10,7 @@ import {
   TagLabel,
   TagLeftIcon,
   HStack,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import {
   SiNextdotjs,
@@ -20,8 +21,11 @@ import {
   SiStyledcomponents,
   SiJavascript,
 } from "react-icons/si";
+import { ProjectsData } from "../data/ProjectsData";
 
 const Works = () => {
+  const textColor = useColorModeValue("teal", "teal.200");
+
   return (
     <Flex direction="column">
       <Heading>Some of my Works</Heading>
@@ -30,135 +34,48 @@ const Works = () => {
         mt="5"
         templateColumns={["1fr", "1fr", "1fr 1fr"]}
         gap={["3", "5", "5", "12"]}
-        px="12"
+        px={["0", "12"]}
       >
-        <Box maxW="100%" borderWidth="1px" borderRadius="lg" overflow="hidden">
-          <Image
-            width="100%"
-            maxH="300"
-            minH="300"
-            objectFit="cover"
-            src="crypto.PNG"
-            alt="crypto"
-          />
+        {ProjectsData.map((project, i) => (
+          <a href={project.link} target="_blank">
+            <Box
+              maxW="100%"
+              borderWidth="1px"
+              borderRadius="lg"
+              overflow="hidden"
+              _hover={{
+                borderColor: "teal",
+                transform: "scale(1.01)",
+                transition: "0.17s ease",
+              }}
+            >
+              <Image
+                width="100%"
+                maxH="300"
+                minH="300"
+                objectFit="cover"
+                src={project.image}
+                alt={project.alt}
+              />
 
-          <Stack p="5">
-            <Box fontWeight="semibold" as="h2" fontSize="xl" isTruncated>
-              Cryptocurrency Tracker
+              <Stack p="5">
+                <Box fontWeight="semibold" as="h2" fontSize="xl" isTruncated>
+                  {project.title}
+                </Box>
+                <HStack align="center">
+                  {project.icons.map((icon, index) => (
+                    <Tag px="2" size="md" colorScheme="teal">
+                      <TagLeftIcon as={icon} />
+                      <TagLabel>{project.iconLabels[index]}</TagLabel>
+                    </Tag>
+                  ))}
+                </HStack>
+                <Divider />
+                <Box>{project.description}</Box>
+              </Stack>
             </Box>
-            <HStack align="center">
-              <Tag px="2" size="md" colorScheme="teal">
-                <TagLeftIcon as={SiNextdotjs} />
-                <TagLabel>Nextjs</TagLabel>
-              </Tag>
-              <Tag px="2" size="md" colorScheme="teal">
-                <TagLeftIcon as={SiJavascript} />
-                <TagLabel>Javascript</TagLabel>
-              </Tag>
-            </HStack>
-            <Divider />
-            <Box>
-              A SPA keeps track of current market price, ATH and 24h percentage
-              changes of the top 100 Cryptocurrencies.
-            </Box>
-          </Stack>
-        </Box>
-
-        <Box maxW="100%" borderWidth="1px" borderRadius="lg" overflow="hidden">
-          <Image
-            width="100%"
-            maxH="300"
-            minH="300"
-            objectFit="cover"
-            src="Pizza.png"
-            alt="pizza"
-          />
-
-          <Stack p="5">
-            <Box fontWeight="semibold" as="h2" fontSize="xl" isTruncated>
-              Antoine's Pizza Website
-            </Box>
-            <HStack align="center">
-              <Tag px="2" size="md" colorScheme="teal">
-                <TagLeftIcon as={SiReact} />
-                <TagLabel>React</TagLabel>
-              </Tag>
-              <Tag px="2" size="md" colorScheme="teal">
-                <TagLeftIcon as={SiStyledcomponents} />
-                <TagLabel>Styled-components</TagLabel>
-              </Tag>
-            </HStack>
-            <Divider />
-            <Box>
-              Front-end for Antoine's Pizza website, displaying Pizza of the
-              day, Desserts and Side Menu.
-            </Box>
-          </Stack>
-        </Box>
-
-        <Box maxW="100%" borderWidth="1px" borderRadius="lg" overflow="hidden">
-          <Image
-            src="Shoesi.PNG"
-            alt="shoe"
-            width="100%"
-            maxH="300"
-            minH="300"
-            objectFit="cover"
-          />
-
-          <Stack p="5">
-            <Box fontWeight="semibold" as="h2" fontSize="xl" isTruncated>
-              Shoesi's Store Website
-            </Box>
-            <HStack align="center">
-              <Tag px="2" size="md" colorScheme="teal">
-                <TagLeftIcon as={SiHtml5} />
-                <TagLabel>Html</TagLabel>
-              </Tag>
-              <Tag px="2" size="md" colorScheme="teal">
-                <TagLeftIcon as={SiCss3} />
-                <TagLabel>Css</TagLabel>
-              </Tag>
-            </HStack>
-            <Divider />
-            <Box>
-              Shoe Store Website displaying variety of deals and seasonal
-              selection.
-            </Box>
-          </Stack>
-        </Box>
-
-        <Box maxW="100%" borderWidth="1px" borderRadius="lg" overflow="hidden">
-          <Image
-            src="bdo.PNG"
-            alt="bdo"
-            width="100%"
-            maxH="300"
-            minH="300"
-            objectFit="cover"
-          />
-
-          <Stack p="5">
-            <Box fontWeight="semibold" as="h2" fontSize="xl" isTruncated>
-              Black Desert Enhancement Simulator
-            </Box>
-            <HStack align="center">
-              <Tag px="2" size="md" colorScheme="teal">
-                <TagLeftIcon as={SiReact} />
-                <TagLabel>React</TagLabel>
-              </Tag>
-              <Tag px="2" size="md" colorScheme="teal">
-                <TagLeftIcon as={SiBootstrap} />
-                <TagLabel>Bootstrap</TagLabel>
-              </Tag>
-            </HStack>
-            <Divider />
-            <Box>
-              An application simulates the item enhancement system from Black
-              Desert Online.
-            </Box>
-          </Stack>
-        </Box>
+          </a>
+        ))}
       </Grid>
     </Flex>
   );

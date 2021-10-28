@@ -19,7 +19,7 @@ const Introduction = () => {
         <SlideFade
           in={true}
           direction="top"
-          transition={{ enter: { duration: 0.4, delay: 0.1 } }}
+          transition={{ enter: { duration: 0.4 } }}
         >
           <Heading
             textAlign={["center", "left"]}
@@ -39,7 +39,7 @@ const Introduction = () => {
           <Flex
             direction={["column", "row"]}
             justify="space-between"
-            px="12"
+            px={["0", "12"]}
             mt="-3"
             align="center"
           >
@@ -65,7 +65,7 @@ const Introduction = () => {
             align="center"
             p="2"
             mt="12"
-            mx="12"
+            mx={["0", "12"]}
           >
             <Text fontSize={["lg", "lg", "xl"]}>
               I'm a Fullstack Developer based in Vietnam
@@ -83,7 +83,7 @@ const Introduction = () => {
             align="center"
             p="2"
             my="3"
-            mx="12"
+            mx={["0", "12"]}
           >
             <Text fontSize={["lg", "lg", "xl"]}>
               Exploring opportunities and side projects
@@ -95,7 +95,13 @@ const Introduction = () => {
           direction="top"
           transition={{ enter: { duration: 0.4, delay: 0.5 } }}
         >
-          <Box borderRadius="lg" bg={popColor} align="center" p="2" mx="12">
+          <Box
+            borderRadius="lg"
+            bg={popColor}
+            align="center"
+            p="2"
+            mx={["0", "12"]}
+          >
             <Text fontSize={["lg", "lg", "xl"]}>
               Computer Sciene and Information System Technology
             </Text>

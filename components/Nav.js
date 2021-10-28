@@ -7,6 +7,10 @@ import {
   HStack,
   useColorModeValue,
   IconButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import { IoTriangleOutline } from "react-icons/io5";
@@ -14,6 +18,7 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 
 const Nav = () => {
   const textColor = useColorModeValue("teal", "teal.200");
+  const popColor = useColorModeValue("custom.300", "custom.200");
 
   const StickNav = styled(Flex)`
     position: sticky;
@@ -22,7 +27,7 @@ const Nav = () => {
     display: flex;
     flex-direction: column;
     /* background-color: #1a202c; */
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(70px);
     transition: height 0.5s, line-height 0.5s;
   `;
 
@@ -50,13 +55,22 @@ const Nav = () => {
 
         <HStack>
           <ColorModeSwitch />
-          <IconButton
-            colorScheme="teal"
-            aria-label="Open Menu"
-            icon={<HamburgerIcon />}
-            display={["flex", "flex", "none", "none"]}
-            variant="outline"
-          />
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              icon={<HamburgerIcon />}
+              colorScheme="teal"
+              aria-label="Open Menu"
+              display={["flex", "flex", "none", "none"]}
+              variant="outline"
+            />
+            <MenuList bgColor={popColor}>
+              <MenuItem>Home</MenuItem>
+              <MenuItem>About</MenuItem>
+              <MenuItem>Works</MenuItem>
+              <MenuItem>Contact</MenuItem>
+            </MenuList>
+          </Menu>
         </HStack>
       </Flex>
       <Divider />

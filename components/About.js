@@ -2,11 +2,13 @@ import {
   Box,
   Flex,
   Text,
-  HStack,
+  Stack,
   Button,
   Heading,
   useColorModeValue,
   SlideFade,
+  HStack,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { EmailIcon } from "@chakra-ui/icons";
 import { FaGithub } from "react-icons/fa";
@@ -16,6 +18,7 @@ import Link from "next/link";
 
 const About = () => {
   const textColor = useColorModeValue("teal", "teal.200");
+  const buttonSize = useBreakpointValue({ base: "md", sm: "lg" });
 
   return (
     <Flex direction="column">
@@ -38,7 +41,7 @@ const About = () => {
           borderColor={textColor}
           p="7"
           mt="7"
-          mx="12"
+          mx={["0", "12"]}
         >
           <Text fontSize={["lg", "lg", "xl"]}>
             I am a freelance and a full-stack developer based in Vietnam with a
@@ -60,11 +63,18 @@ const About = () => {
         direction="top"
         transition={{ enter: { duration: 0.4, delay: 0.2 } }}
       >
-        <HStack mt="12" justify="center" spacing="7">
+        <HStack
+          mt={["7", "12"]}
+          justify="center"
+          spacing={["3", "7"]}
+          // direction={["column", "row"]}
+          // align="center"
+        >
           <a href="https://github.com/hoangulrich" target="_blank">
             <Button
               variant="outline"
-              size="lg"
+              // size="lg"
+              size={buttonSize}
               colorScheme="teal"
               leftIcon={<FaGithub />}
             >
@@ -73,7 +83,8 @@ const About = () => {
           </a>
           <Button
             variant="outline"
-            size="lg"
+            // size={["sm", "md", "lg", "lg"]}
+            size={buttonSize}
             colorScheme="teal"
             leftIcon={<EmailIcon />}
           >
@@ -81,7 +92,8 @@ const About = () => {
           </Button>
           <Button
             variant="outline"
-            size="lg"
+            // size="lg"
+            size={buttonSize}
             colorScheme="teal"
             leftIcon={<IoDocumentSharp />}
           >

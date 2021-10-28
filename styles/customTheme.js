@@ -84,6 +84,14 @@ const customTheme = extendTheme({
     useSystemColorMode: false,
   },
 
+  styles: {
+    global: (props) => ({
+      "html,body": {
+        bg: props.colorMode === "dark" ? "#111111" : "#FCFCFC",
+      },
+    }),
+  },
+
   // components: {
   //   Avatar: {
   //     sizes: {

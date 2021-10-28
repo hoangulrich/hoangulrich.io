@@ -25,10 +25,10 @@ const Contact = () => {
         borderColor={textColor}
         p="7"
         mt="7"
-        mx="12"
+        mx={["0", "12"]}
         alignItems="center"
         justifyContent="center"
-        h="50vh"
+        minH="50vh"
         spacing="7"
       >
         <Flex color={textColor} fontSize="3xl" align="center">
