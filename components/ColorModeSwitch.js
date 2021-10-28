@@ -10,6 +10,7 @@ const ColorModeSwitch = () => {
         colorScheme="teal"
         onClick={toggleColorMode}
         icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
+        aria-label="Dark Mode Switch"
       />
     </>
   );

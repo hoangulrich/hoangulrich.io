@@ -12,6 +12,7 @@ import { EmailIcon } from "@chakra-ui/icons";
 import { FaGithub } from "react-icons/fa";
 import { IoDocumentSharp } from "react-icons/io5";
 import { GiCircle } from "react-icons/gi";
+import Link from "next/link";
 
 const About = () => {
   const textColor = useColorModeValue("teal", "teal.200");
@@ -39,7 +40,7 @@ const About = () => {
           mt="7"
           mx="12"
         >
-          <Text fontSize="xl">
+          <Text fontSize={["lg", "lg", "xl"]}>
             I am a freelance and a full-stack developer based in Vietnam with a
             passion for building digital services/products. I have a knack for
             all things launching products, from planning and designing all the
@@ -60,14 +61,16 @@ const About = () => {
         transition={{ enter: { duration: 0.4, delay: 0.2 } }}
       >
         <HStack mt="12" justify="center" spacing="7">
-          <Button
-            variant="outline"
-            size="lg"
-            colorScheme="teal"
-            leftIcon={<FaGithub />}
-          >
-            Github
-          </Button>
+          <a href="https://github.com/hoangulrich" target="_blank">
+            <Button
+              variant="outline"
+              size="lg"
+              colorScheme="teal"
+              leftIcon={<FaGithub />}
+            >
+              Github
+            </Button>
+          </a>
           <Button
             variant="outline"
             size="lg"

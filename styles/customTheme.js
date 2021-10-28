@@ -21,7 +21,7 @@ const customTheme = extendTheme({
     sm: "40em",
     md: "52em",
     lg: "64em",
-    xl: "76em",
+    xl: "80em",
   },
 
   fontSizes: {
@@ -35,8 +35,8 @@ const customTheme = extendTheme({
     "4xl": "2.25rem",
     "5xl": "3rem",
     "6xl": "3.75rem",
-    "7xl": "4.5rem",
-    "8xl": "6rem",
+    "7xl": "4.9rem",
+    "8xl": "7rem",
     "9xl": "8rem",
   },
 
@@ -84,13 +84,13 @@ const customTheme = extendTheme({
     useSystemColorMode: false,
   },
 
-  components: {
-    Avatar: {
-      sizes: {
-        "3xl": "10px",
-      },
-    },
-  },
+  // components: {
+  //   Avatar: {
+  //     sizes: {
+  //       "3xl": "10px",
+  //     },
+  //   },
+  // },
 });
 
 export default customTheme;

@@ -21,7 +21,14 @@ const Introduction = () => {
           direction="top"
           transition={{ enter: { duration: 0.4, delay: 0.1 } }}
         >
-          <Heading color={textColor}>Hi, I'm</Heading>
+          <Heading
+            textAlign={["center", "left"]}
+            color={textColor}
+            fontSize={["xl", "xl", "2xl", "3xl"]}
+            mb="-3"
+          >
+            Hi, I'm
+          </Heading>
         </SlideFade>
 
         <SlideFade
@@ -29,7 +36,13 @@ const Introduction = () => {
           direction="top"
           transition={{ enter: { duration: 0.4, delay: 0.2 } }}
         >
-          <Flex justify="space-between" px="12" mt="-3" align="center">
+          <Flex
+            direction={["column", "row"]}
+            justify="space-between"
+            px="12"
+            mt="-3"
+            align="center"
+          >
             <Heading fontSize={["6xl", "7xl", "8xl", "9xl"]}>Hoang Le</Heading>
             <Avatar
               src="/mnn.jpg"
@@ -54,7 +67,7 @@ const Introduction = () => {
             mt="12"
             mx="12"
           >
-            <Text fontSize="xl">
+            <Text fontSize={["lg", "lg", "xl"]}>
               I'm a Fullstack Developer based in Vietnam
             </Text>
           </Box>
@@ -72,7 +85,9 @@ const Introduction = () => {
             my="3"
             mx="12"
           >
-            <Text fontSize="xl">Exploring opportunities and side projects</Text>
+            <Text fontSize={["lg", "lg", "xl"]}>
+              Exploring opportunities and side projects
+            </Text>
           </Box>
         </SlideFade>
         <SlideFade
@@ -81,7 +96,7 @@ const Introduction = () => {
           transition={{ enter: { duration: 0.4, delay: 0.5 } }}
         >
           <Box borderRadius="lg" bg={popColor} align="center" p="2" mx="12">
-            <Text fontSize="xl">
+            <Text fontSize={["lg", "lg", "xl"]}>
               Computer Sciene and Information System Technology
             </Text>
           </Box>

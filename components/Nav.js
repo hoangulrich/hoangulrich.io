@@ -6,9 +6,11 @@ import {
   Divider,
   HStack,
   useColorModeValue,
+  IconButton,
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import { IoTriangleOutline } from "react-icons/io5";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 const Nav = () => {
   const textColor = useColorModeValue("teal", "teal.200");
@@ -31,7 +33,7 @@ const Nav = () => {
           <IoTriangleOutline />
         </Flex>
 
-        <HStack spacing="7">
+        <HStack spacing="7" display={["none", "none", "flex"]}>
           <Button colorScheme="teal" variant="ghost">
             Home
           </Button>
@@ -46,9 +48,16 @@ const Nav = () => {
           </Button>
         </HStack>
 
-        <Box>
+        <HStack>
           <ColorModeSwitch />
-        </Box>
+          <IconButton
+            colorScheme="teal"
+            aria-label="Open Menu"
+            icon={<HamburgerIcon />}
+            display={["flex", "flex", "none", "none"]}
+            variant="outline"
+          />
+        </HStack>
       </Flex>
       <Divider />
     </StickNav>
