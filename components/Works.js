@@ -12,22 +12,13 @@ import {
   HStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import {
-  SiNextdotjs,
-  SiReact,
-  SiBootstrap,
-  SiHtml5,
-  SiCss3,
-  SiStyledcomponents,
-  SiJavascript,
-} from "react-icons/si";
 import { ProjectsData } from "../data/ProjectsData";
 
 const Works = () => {
   const textColor = useColorModeValue("teal", "teal.200");
 
   return (
-    <Flex direction="column">
+    <Flex direction="column" id="works">
       <Heading>Some of my Works</Heading>
 
       <Grid
@@ -35,6 +26,8 @@ const Works = () => {
         templateColumns={["1fr", "1fr", "1fr 1fr"]}
         gap={["3", "5", "5", "12"]}
         px={["0", "12"]}
+        alignItems="center"
+        justifyContent="center"
       >
         {ProjectsData.map((project, i) => (
           <a href={project.link} target="_blank">

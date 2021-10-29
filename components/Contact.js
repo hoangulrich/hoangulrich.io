@@ -17,7 +17,7 @@ const Contact = () => {
   const textColor = useColorModeValue("teal", "teal.200");
 
   return (
-    <Flex direction="column">
+    <Flex direction="column" id="contact">
       <Heading>Contact</Heading>
       <Stack
         borderRadius="lg"

@@ -2,7 +2,6 @@ import {
   Box,
   Flex,
   Text,
-  Stack,
   Button,
   Heading,
   useColorModeValue,
@@ -13,15 +12,13 @@ import {
 import { EmailIcon } from "@chakra-ui/icons";
 import { FaGithub } from "react-icons/fa";
 import { IoDocumentSharp } from "react-icons/io5";
-import { GiCircle } from "react-icons/gi";
-import Link from "next/link";
 
 const About = () => {
   const textColor = useColorModeValue("teal", "teal.200");
   const buttonSize = useBreakpointValue({ base: "md", sm: "lg" });
 
   return (
-    <Flex direction="column">
+    <Flex direction="column" id="about">
       <SlideFade
         in={true}
         direction="top"
@@ -46,14 +43,25 @@ const About = () => {
           <Text fontSize={["lg", "lg", "xl"]}>
             I am a freelance and a full-stack developer based in Vietnam with a
             passion for building digital services/products. I have a knack for
-            all things launching products, from planning and designing all the
-            way to solving real-life problems with code. When not online, I love
-            haning out with my dog. Currently my main focuses are{" "}
+            developing an application, from planning and designing all the way
+            to solving real-life problems with code. When not online, I find
+            myself playing some video games with friends or playing soccer.
+            Currently my main focuses are{" "}
             <Box as="span" color={textColor}>
               {" "}
-              Web & Mobile Development{" "}
+              Web & Mobile Development
             </Box>
-            , Open Source and Competitive Programming.
+            ,
+            <Box as="span" color={textColor}>
+              {" "}
+              Game Design{" "}
+            </Box>
+            and
+            <Box as="span" color={textColor}>
+              {" "}
+              API Building
+            </Box>
+            .
           </Text>
         </Box>
       </SlideFade>

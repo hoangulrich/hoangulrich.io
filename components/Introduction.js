@@ -15,7 +15,7 @@ const Introduction = () => {
 
   return (
     <>
-      <Flex direction="column">
+      <Flex direction="column" id="intro">
         <SlideFade
           in={true}
           direction="top"
